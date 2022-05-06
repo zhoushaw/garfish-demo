@@ -1,5 +1,9 @@
 {
-  "packages": ["main", "sub"],
+  "packages": [
+    "main",
+    "react-sub",
+    "vite-sub"
+  ],
   "version": "0.0.0",
   "npmClient": "npm"
 }
