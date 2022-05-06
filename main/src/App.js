@@ -2,7 +2,6 @@ import React, { useEffect, Suspense } from 'react';
 import { BrowserRouter, Link, Routes, Route } from 'react-router-dom';
 import Garfish from 'garfish';
 
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -21,8 +20,7 @@ const App = () => {
             paddingBottom: '1rem',
           }}
         >
-          <Link to="/">React-App</Link> | 
-          <Link to="/vite-App">Vite-App</Link> |{' '}
+          <Link to="/">React-App</Link> |<Link to="/vite-App">Vite-App</Link> |{' '}
         </nav>
         <Routes>
           <Route path="/" element={<ReactApp />} />
@@ -33,7 +31,7 @@ const App = () => {
   );
 };
 
-function ReactApp () {
+function ReactApp() {
   useEffect(async () => {
     // docs: https://garfish.top/
     const app = await Garfish.loadApp('react-app', {
@@ -48,14 +46,14 @@ function ReactApp () {
       },
     });
     app.mounted ? app.show() : await app.mount();
-    return ()=>{
+    return () => {
       app.hide();
-    }
+    };
   });
-  return <div id="container"></div>
+  return <div id="container"></div>;
 }
 
-function ViteApp () {
+function ViteApp() {
   useEffect(async () => {
     // docs: https://garfish.top/
     const app = await Garfish.loadApp('vite-app', {
@@ -68,11 +66,11 @@ function ViteApp () {
       },
     });
     app.mounted ? app.show() : await app.mount();
-    return ()=>{
+    return () => {
       app.hide();
-    }
+    };
   });
-  return <div id="container"></div>
+  return <div id="container"></div>;
 }
 
 export default App;
