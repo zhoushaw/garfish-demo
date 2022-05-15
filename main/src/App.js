@@ -57,7 +57,7 @@ function ViteApp() {
   useEffect(async () => {
     // docs: https://garfish.top/
     const app = await Garfish.loadApp('vite-app', {
-      entry: 'http://localhost:4000',
+      entry: 'http://localhost:3003',
       basename: '/',
       domGetter: '#container',
       sandbox: false,
